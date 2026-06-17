@@ -1,0 +1,46 @@
+{
+  "name": "gestao-orcamentos",
+  "version": "1.0.0",
+  "description": "Gestão de Orçamentos - Attizani Engenharia",
+  "author": "Attizani Engenharia",
+  "homepage": "./",
+  "main": "electron.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-build": "npm run build && electron-builder",
+    "test": "react-scripts test"
+  },
+  "build": {
+    "appId": "br.com.attizani.gestao",
+    "productName": "Gestão de Orçamentos",
+    "win": {
+      "target": "nsis",
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerLanguages": ["pt_BR"],
+      "language": "1046"
+    },
+    "files": [
+      "build/**/*",
+      "electron.js",
+      "node_modules/**/*"
+    ]
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.6.4",
+    "wait-on": "^7.2.0"
+  }
+}

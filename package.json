@@ -8,30 +8,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-build": "npm run build && electron-builder",
     "test": "react-scripts test"
   },
-  "build": {
-    "appId": "br.com.attizani.gestao",
-    "productName": "Gestão de Orçamentos",
-    "win": {
-      "target": "nsis",
-      "icon": "public/icon.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "installerLanguages": ["pt_BR"],
-      "language": "1046"
-    },
-    "files": [
-      "build/**/*",
-      "electron.js",
-      "node_modules/**/*"
-    ]
-  },
   "dependencies": {
+    "firebase": "^10.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
@@ -42,5 +22,9 @@
     "electron": "^28.0.0",
     "electron-builder": "^24.6.4",
     "wait-on": "^7.2.0"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }
